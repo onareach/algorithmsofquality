@@ -14,12 +14,21 @@ This is a blog template built with:
 
 This application requires Node.js v18.17+.
 
-```bash
-git clone https://github.com/leerob/next-mdx-blog.git
-cd next-mdx-blog
-pnpm install
-pnpm dev
-```
+### Quick Start
+
+1. Open a terminal window
+2. Navigate to the project directory:
+   ```bash
+   cd /Users/davidlong/main_projects/quality_projects/next-mdx-blog
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. The server will start and display a URL (typically http://localhost:3000)
+5. Open that URL in your browser
+
+Later, to stop the server before closing the terminal window, type Ctrl + C.
 
 ## Database (Optional)
 

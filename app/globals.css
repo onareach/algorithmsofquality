@@ -29,6 +29,7 @@ h2,
 h3,
 h4 {
   text-wrap: balance;
+  font-weight: inherit;
 }
 
 pre {
@@ -110,4 +111,31 @@ table {
   overflow-x: auto;
   white-space: nowrap;
   text-align: left;
+}
+
+/* Navigation styles */
+.text-copy {
+  color: rgb(75 85 99); /* gray-600 */
+}
+
+.text-nav {
+  color: rgb(107 114 128); /* gray-500 */
+}
+
+.text-nav-hover:hover {
+  color: rgb(75 85 99); /* gray-600 */
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-copy {
+    color: rgb(209 213 219); /* gray-300 */
+  }
+  
+  .text-nav {
+    color: rgb(156 163 175); /* gray-400 */
+  }
+  
+  .text-nav-hover:hover {
+    color: rgb(209 213 219); /* gray-300 */
+  }
 }

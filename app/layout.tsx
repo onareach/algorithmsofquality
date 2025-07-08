@@ -6,15 +6,15 @@ import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://next-mdx-blog.vercel.app'),
+  metadataBase: new URL('https://algorithmsofquality.com'),
   alternates: {
     canonical: '/'
   },
   title: {
-    default: 'John Smith',
-    template: '%s | John Smith'
+    default: 'Algorithms of Quality',
+    template: '%s | Algorithms of Quality'
   },
-  description: 'My portfolio, blog, and personal website.'
+  description: 'Exploring the intersection of perception, physics, and linguistics to develop algorithms of Quality.'
 };
 
 export default function RootLayout({
@@ -26,9 +26,12 @@ export default function RootLayout({
     <html lang="en" className={`${inter.className}`}>
       <body className="antialiased tracking-tight">
         <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 dark:bg-zinc-950 bg-white text-gray-900 dark:text-zinc-200">
-          <main className="max-w-[60ch] mx-auto w-full space-y-6">
-            {children}
-          </main>
+          <div className="flex flex-col md:flex-row justify-between relative max-w-6xl mx-auto w-full">
+            <main className="w-full md:w-3/4 pr-0 md:pr-12 space-y-6">
+              {children}
+            </main>
+            <Navigation />
+          </div>
           <Footer />
           <Analytics />
         </div>
@@ -37,12 +40,39 @@ export default function RootLayout({
   );
 }
 
+function Navigation() {
+  return (
+    <nav className="mt-12 md:mt-0 w-full md:w-1/4">
+      <ul className="space-y-2 md:text-right">
+        <li className="p-0">
+          <a className="text-copy" href="/">
+            about
+          </a>
+        </li>
+        <li className="p-0">
+          <a className="text-nav hover:text-nav-hover" href="/blog">
+            blog
+          </a>
+        </li>
+        <li className="p-0">
+          <a className="text-nav hover:text-nav-hover" href="/quality-terms">
+            quality terms
+          </a>
+        </li>
+        <li className="p-0">
+          <a className="text-nav hover:text-nav-hover" href="/writings">
+            writings
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
 function Footer() {
   const links = [
-    { name: '@johnsmith', url: 'https://x.com/johnsmith' },
-    { name: 'youtube', url: 'https://www.youtube.com/@johnsmith' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/johnsmith' },
-    { name: 'github', url: 'https://github.com/johnsmith' }
+    { name: '@davidlong', url: 'https://davidlong.tech' },
+    { name: 'github', url: 'https://github.com/onareach' }
   ];
 
   return (
