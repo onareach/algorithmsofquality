@@ -49,11 +49,11 @@ function Navigation() {
             about
           </a>
         </li>
-        <li className="p-0">
+        {/* <li className="p-0">
           <a className="text-nav hover:text-nav-hover" href="/blog">
             blog
           </a>
-        </li>
+        </li> */}
         <li className="p-0">
           <a className="text-nav hover:text-nav-hover" href="/quality-terms">
             quality terms
