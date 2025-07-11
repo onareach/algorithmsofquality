@@ -71,7 +71,6 @@ function Navigation() {
 
 function Footer() {
   const links = [
-    { name: '@davidlong', url: 'https://davidlong.tech' },
     { name: 'github', url: 'https://github.com/onareach' }
   ];
 
