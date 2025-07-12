@@ -47,8 +47,7 @@ For example, a laptop product in such a system isn't defined by a single field. 
 - **Pricing**: $899 wholesale  
 - **Classifications**: electronics category, portable device type, business use  
 
-```mermaid
-erDiagram
+<Mermaid chart={`erDiagram
     PRODUCTS {
         int product_id PK
         string product_name
@@ -84,7 +83,7 @@ erDiagram
     PRODUCTS ||--o{ SUPPLIERS : "supplied_by"
     PRODUCTS ||--o{ PRICING : "priced_in"
     PRODUCTS ||--o{ CLASSIFICATIONS : "classified_as"
-```
+`} />
 
 This isn't just a technical strategy — it mirrors something deeper about identity. A "product" exists not as a standalone entity, but as the intersection of various qualities. Remove the relationships, and the object dissolves into fragments: dimensions without context, prices without things, classifications without subjects. Identity comes from the *pattern of connections* among qualities, not from some essential core.
 

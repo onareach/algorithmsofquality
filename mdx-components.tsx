@@ -1,6 +1,7 @@
 import React, { ComponentPropsWithoutRef } from 'react';
 import Link from 'next/link';
 import { highlight } from 'sugar-high';
+import Mermaid from './components/Mermaid';
 
 type HeadingProps = ComponentPropsWithoutRef<'h1'>;
 type ParagraphProps = ComponentPropsWithoutRef<'p'>;
@@ -47,7 +48,7 @@ const components = {
     <em className="font-medium" {...props} />
   ),
   strong: (props: ComponentPropsWithoutRef<'strong'>) => (
-    <strong className="font-medium" {...props} />
+    <strong style={{ fontWeight: 'bold' }} {...props} />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
     const className =
@@ -108,6 +109,7 @@ const components = {
       {...props}
     />
   ),
+  Mermaid,
 };
 
 declare global {
