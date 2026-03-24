@@ -1,0 +1,80 @@
+export const metadata = {
+  title: 'A Modern Illustration: Database Design',
+  alternates: {
+    canonical: '/writings/database-design-quality-illustration',
+  },
+};
+
+export const category = 'foundations';
+
+# A Modern Illustration: Database Design
+
+<br />
+
+*Companion piece to [Two Definitions of Quality](/writings/two-definitions-of-quality).*
+
+<br />
+
+Modern database architecture offers a concrete example of how objects can be understood as structured bundles of qualities. In well-designed databases, a main table — like "Products" — might contain only an identifier, while most descriptive information is stored in related tables linked through foreign keys:
+
+- A *specifications* table records dimensions and materials  
+- A *suppliers* table tracks who made the product  
+- A *pricing* table stores cost data for different markets  
+- A *classifications* table organizes products by type and function  
+
+Even names can be kept in reference tables, making them easier to translate, update, or reuse.
+
+For example, a laptop product in such a system isn't defined by a single field. Its identity emerges from a network of features:
+
+- **Specifications**: 15.6" screen, 16GB RAM, 512GB SSD  
+- **Supplier**: TechCorp, 2024 model  
+- **Pricing**: $899 wholesale  
+- **Classifications**: electronics category, portable device type, business use  
+
+<Mermaid chart={`erDiagram
+    PRODUCTS {
+        int product_id PK
+        string product_name
+    }
+    SPECIFICATIONS {
+        int spec_id PK
+        int product_id FK
+        string dimension_type
+        float value
+        string unit
+    }
+    SUPPLIERS {
+        int supplier_id PK
+        int product_id FK
+        string company_name
+        string contact_info
+    }
+    PRICING {
+        int price_id PK
+        int product_id FK
+        string market
+        decimal price
+        date effective_date
+    }
+    CLASSIFICATIONS {
+        int class_id PK
+        int product_id FK
+        string category
+        string subcategory
+    }
+    
+    PRODUCTS ||--o{ SPECIFICATIONS : "has"
+    PRODUCTS ||--o{ SUPPLIERS : "supplied_by"
+    PRODUCTS ||--o{ PRICING : "priced_in"
+    PRODUCTS ||--o{ CLASSIFICATIONS : "classified_as"
+`} />
+
+This isn't just a technical strategy — it mirrors something deeper about identity. A "product" exists not as a standalone entity, but as the intersection of various qualities. Remove the relationships, and the object dissolves into fragments: dimensions without context, prices without things, classifications without subjects. Identity comes from the *pattern of connections* among qualities, not from some essential core.
+
+This architectural model reflects how we understand most things — as assemblies of qualities held together by structure and context.
+
+It's important to note that an object's identity is not tied to a *fixed* set of qualities. As Descartes observed in his example of melting wax, all perceptible features may change — shape, smell, texture, even sound — and yet we still recognize it as the *same* wax. What remains is not a fixed list of qualities, but a coherent transformation within a pattern we continue to recognize. This suggests that identity depends not only on *which* qualities are present, but also on *how* they relate, persist, and evolve together over time.
+
+---
+
+*Return to [Two Definitions of Quality](/writings/two-definitions-of-quality).*

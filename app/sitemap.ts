@@ -42,6 +42,7 @@ export default async function sitemap() {
 
   const writings = [
     '/writings/two-definitions-of-quality',
+    '/writings/database-design-quality-illustration',
     '/writings/expanding-the-realm-of-science-to-include-good',
     '/writings/motives-direction-of-quality'
   ].map((route) => ({
