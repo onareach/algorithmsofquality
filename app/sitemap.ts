@@ -35,10 +35,19 @@ export default async function sitemap() {
     lastModified: new Date().toISOString()
   }));
 
-  const routes = ['', '/blog', '/quality-terms', '/writings'].map((route) => ({
+  const routes = ['', '/blog', '/quality-terms', '/writings', '/ai-disclosure'].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date().toISOString()
   }));
 
-  return [...routes, ...notes];
+  const writings = [
+    '/writings/two-definitions-of-quality',
+    '/writings/expanding-the-realm-of-science-to-include-good',
+    '/writings/motives-direction-of-quality'
+  ].map((route) => ({
+    url: `${SITE_URL}${route}`,
+    lastModified: new Date().toISOString()
+  }));
+
+  return [...routes, ...writings, ...notes];
 }
