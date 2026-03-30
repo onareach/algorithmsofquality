@@ -34,7 +34,7 @@
 ## Step 3: Update Git Remote (Run these commands)
 
 ```bash
-cd next-mdx-blog
+cd algorithmsofquality
 
 # Remove the old remote pointing to Lee Robinson's repo
 git remote remove origin
@@ -66,7 +66,7 @@ git push -u origin main
 npm i -g vercel
 
 # Deploy from project directory
-cd next-mdx-blog
+cd algorithmsofquality
 vercel
 
 # Follow prompts to link to your account and deploy

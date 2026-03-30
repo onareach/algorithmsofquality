@@ -85,6 +85,11 @@ function Navigation() {
             writings
           </a>
         </li>
+        <li className="p-0">
+          <Link href="/framework" className="text-nav hover:text-nav-hover">
+            core framework
+          </Link>
+        </li>
       </ul>
     </nav>
   );

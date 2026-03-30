@@ -30,7 +30,7 @@ Connect your GoDaddy domain `algorithmsofquality.com` to your Vercel deployment.
 
 ### Option B: CLI Alternative (if web fails)
 ```bash
-cd next-mdx-blog
+cd algorithmsofquality
 vercel domains add algorithmsofquality.com --scope david-longs-projects-14094a66
 vercel domains add www.algorithmsofquality.com --scope david-longs-projects-14094a66
 ```
@@ -140,7 +140,7 @@ nslookup algorithmsofquality.com 8.8.8.8
 
 2. **CLI Check**:
    ```bash
-   cd next-mdx-blog
+   cd algorithmsofquality
    vercel domains ls
    ```
 

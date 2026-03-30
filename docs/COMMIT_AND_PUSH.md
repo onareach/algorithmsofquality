@@ -6,7 +6,7 @@ This site is a **single** Next.js app in one Git repository. There is no separat
 
 | Item | Detail |
 |------|--------|
-| **Repo root (run `git` here)** | `next-mdx-blog/` (the folder that contains `app/`, `package.json`, and `.git`) |
+| **Repo root (run `git` here)** | `algorithmsofquality/` (the folder that contains `app/`, `package.json`, and `.git`) |
 | **Remote** | `origin` → [github.com/onareach/algorithmsofquality](https://github.com/onareach/algorithmsofquality) |
 | **Production** | Vercel (auto-deploys when you push to `main`) |
 | **Live URL** | https://algorithmsofquality.com |
@@ -15,11 +15,11 @@ This site is a **single** Next.js app in one Git repository. There is no separat
 
 ## Before You Begin
 
-**Important:** The parent folder `quality_projects/` is *not* the git repository. Git commands must be run from **`next-mdx-blog/`** (where `.git` lives). Running `git status` from `quality_projects/` will fail with “not a git repository” unless you initialize git there separately.
+**Important:** The parent folder `quality_projects/` is *not* the git repository. Git commands must be run from **`algorithmsofquality/`** (where `.git` lives). Running `git status` from `quality_projects/` will fail with “not a git repository” unless you initialize git there separately.
 
 1. **Check for changes** (from your machine):
    ```bash
-   cd /Users/davidlong/main_projects/quality_projects/next-mdx-blog
+   cd /Users/davidlong/main_projects/quality_projects/algorithmsofquality
    git status
    ```
 2. **Commit message:** Review the diff and write a short, accurate summary of what changed.
@@ -30,11 +30,11 @@ This site is a **single** Next.js app in one Git repository. There is no separat
 ## Repository layout (reference)
 
 ```
-quality_projects/                 ← not a git root (unless you add one)
-└── next-mdx-blog/                ← git repo root; run all git commands here
+quality_projects/                 ← umbrella folder for quality-related work (not a git root)
+└── algorithmsofquality/          ← git repo root; run all git commands here
     ├── app/
     ├── public/
-    ├── docs/
+    ├── docs/                     ← deployment notes, dev log, drafts (not served as site routes)
     ├── package.json
     └── ...
 ```
@@ -46,7 +46,7 @@ quality_projects/                 ← not a git root (unless you add one)
 Pushing to **`main`** on GitHub is what triggers Vercel to build and deploy. No Heroku or second repo step.
 
 ```bash
-cd /Users/davidlong/main_projects/quality_projects/next-mdx-blog
+cd /Users/davidlong/main_projects/quality_projects/algorithmsofquality
 
 # Stage and commit
 git add -A
@@ -65,7 +65,7 @@ git push origin main
 If you use the CLI for previews or manual production deploys (as in some past project notes):
 
 ```bash
-cd /Users/davidlong/main_projects/quality_projects/next-mdx-blog
+cd /Users/davidlong/main_projects/quality_projects/algorithmsofquality
 npx vercel --prod
 ```
 
@@ -75,8 +75,8 @@ Prefer **git push** as the primary workflow so GitHub remains the source of trut
 
 ## Quick reference
 
-| Action | Command (from `next-mdx-blog/`) |
-|--------|----------------------------------|
+| Action | Command (from `algorithmsofquality/`) |
+|--------|----------------------------------------|
 | **Status** | `git status` |
 | **Commit** | `git add …` then `git commit -m "msg"` |
 | **Deploy (typical)** | `git push origin main` |
@@ -105,7 +105,7 @@ git remote -v
 ## Troubleshooting
 
 **“fatal: not a git repository”**  
-You are not inside `next-mdx-blog/`. `cd` to that directory and run `git status` again.
+You are not inside `algorithmsofquality/`. `cd` to that directory and run `git status` again.
 
 **Site not updating after push**  
 - Vercel deploys from GitHub; confirm the commit appears on `main` at [github.com/onareach/algorithmsofquality](https://github.com/onareach/algorithmsofquality).  
@@ -119,7 +119,7 @@ You are not inside `next-mdx-blog/`. `cd` to that directory and run `git status`
 
 **Build fails on Vercel**  
 - Open the failed deployment log in Vercel.  
-- Reproduce locally: `npm run build` from `next-mdx-blog/`.  
+- Reproduce locally: `npm run build` from `algorithmsofquality/`.  
 - Fix TypeScript/MDX errors, missing env (if required for your change), then commit and push again.
 
 ---
@@ -130,7 +130,7 @@ You are not inside `next-mdx-blog/`. `cd` to that directory and run `git status`
 If you have local-only files (notes, backups) that should not ship, use `git add <path>` for specific paths instead of `git add -A`. Always run `git status` before `git commit`.
 
 **Project log (optional)**  
-If you maintain **`DEVELOPMENT_LOG.md`** in the parent `quality_projects/` folder, you can add the commit hash and a one-line note after a production deploy—purely for your own records; it is not required for Vercel.
+`docs/DEVELOPMENT_LOG.md` lives in this repo; update it with commit hashes after significant deploys if you want a paper trail (not required for Vercel).
 
 ---
 
